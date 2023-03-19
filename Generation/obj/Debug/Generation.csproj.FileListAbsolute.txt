@@ -1,0 +1,11 @@
+C:\Users\zvere\RiderProjects\Generation\Generation\bin\Debug\Generation.exe.config
+C:\Users\zvere\RiderProjects\Generation\Generation\bin\Debug\Generation.exe
+C:\Users\zvere\RiderProjects\Generation\Generation\bin\Debug\Generation.pdb
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.csproj.AssemblyReference.cache
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.csproj.SuggestedBindingRedirects.cache
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.Properties.Resources.resources
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.csproj.GenerateResource.cache
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.csproj.CoreCompileInputs.cache
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.exe
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.pdb
+C:\Users\zvere\RiderProjects\Generation\Generation\obj\Debug\Generation.Form1.resources
