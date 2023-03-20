@@ -10,15 +10,46 @@ using System.Windows.Forms;
 
 namespace Generation
 {
-  public partial class Form1 : Form
+    public partial class Form1 : Form
     {
-        
+        private Mathematic _mathematic;
+        private bool _choiseGeneration = true;
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+      
+        private void numericSequence_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+        
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            _choiseGeneration = true;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            _choiseGeneration = false;
+        }
+        
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            if (_choiseGeneration)
+            {
+                _mathematic.buttonStart((int)numericSequence.Value);
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
             
         }
 
+
+        
     }
 }
