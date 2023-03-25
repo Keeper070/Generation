@@ -125,7 +125,7 @@
             // 
             // listView2
             // 
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listView2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listView2.Location = new System.Drawing.Point(37, 224);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(191, 325);

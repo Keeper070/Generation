@@ -17,6 +17,7 @@ namespace Generation
 
         public Form1()
         {
+            _mathematic = new Mathematic(this);
             InitializeComponent();
         }
 
@@ -40,13 +41,17 @@ namespace Generation
         {
             if (_choiseGeneration)
             {
-                _mathematic.buttonStart((int)numericSequence.Value);
+                double[] buffArr = _mathematic.ButtonStart((int)numericSequence.Value);
+                listView2.Items.Add((listView2.Items.Count + 1 + ") ") + "Mx = " + buffArr[0].ToString("#.###") + "\n" +
+                                    " Dx = " + buffArr[1].ToString("#.###"));
+             
             }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            
+            _mathematic = new Mathematic(this);
+            listView2.Items.Clear();
         }
 
 
