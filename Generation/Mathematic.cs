@@ -6,8 +6,8 @@ namespace Generation
     public class Mathematic
     {
         private readonly Form1 _form1;
-        private double[] _arrayM { get; set; }
-        private double[] _arrayP { get; set; }
+        public double[] arrayM { get; set; }
+        public double[] arrayP { get; set; }
         private Random _random;
 
         #region Const 
@@ -22,17 +22,19 @@ namespace Generation
         public Mathematic(Form1 form1)
         {
             _form1 = form1;
-            _arrayM = new double[100];
-            _arrayP = new double[100];
+            arrayM = new double[100];
+            arrayP = new double[100];
             _random = new Random();
         }
     
         
         public double[] ButtonStart(int numericSequence)
         {
-            _arrayM = new double[100];
+            arrayM = new double[100];
+            arrayP = new double[100]; 
             NumericSequence = numericSequence;
             GenerateArrayM();
+            GenerateSequenceForArrP();
             double[] buff = SearchValue();
             return buff;
         }
@@ -43,8 +45,25 @@ namespace Generation
             int number = 0;
             for (int i = 0; i < NumericSequence ; i++)
             { 
-                number = _random.Next(100);
-                _arrayM[number]++;
+                if(_form1.choiseGeneration){number = _random.Next(100);}
+                else
+                {
+                    // number = Lemer();
+                }
+                arrayM[number]++;
+            }
+        }
+        
+        /// <summary>
+        /// Метод Заполнение массива P
+        /// </summary>
+        private void GenerateSequenceForArrP()
+        {
+            arrayP[0] = 0;
+            arrayP[1] = arrayM[0];
+            for (int i = 2; i < arrayP.Length; i++)
+            {
+                arrayP[i] = arrayP[i - 1] + arrayM[i - 1];
             }
         }
         
@@ -61,10 +80,10 @@ namespace Generation
             //Дисперсия 
             // double disp = 0;
             
-            for (int xi = 0; xi < _arrayM.Length; xi++)
+            for (int xi = 0; xi < arrayM.Length; xi++)
             {
                 //поиск вероятности
-                var pi = _arrayM[xi] / NumericSequence;
+                var pi = arrayM[xi] / NumericSequence;
                 mathExpectationDisk1 += xi * pi;
                 mathExpectedDisk2 += xi * xi * pi;
                 // disp += Math.Pow(xi - mathExpectationDisk, 2);
@@ -74,9 +93,9 @@ namespace Generation
             return new[] { mathExpectationDisk1, disp };
         }
 
-        private double Lemer()
-        {
-            
-        }
+        // private double Lemer()
+        // {
+        //     
+        // }
     }
 }

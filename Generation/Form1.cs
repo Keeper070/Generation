@@ -18,14 +18,14 @@ namespace Generation
             Лемер, Встроенный
         }
         private Mathematic _mathematic;
-        private bool _choiseGeneration = true;
-        private bool _choiseGeneratorLemer = false;
+        public bool choiseGeneration { get; set; }
         private RandomTypeEnum _type;
 
         public Form1()
         {
             InitializeComponent();
             _mathematic = new Mathematic(this);
+            choiseGeneration = true;
             this.chart1.Palette = ChartColorPalette.Bright;
             this.chart1.Titles.Add("f(x)");
             this.chart1.Series.RemoveAt(0);
@@ -42,44 +42,41 @@ namespace Generation
         
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            _choiseGeneration = true;
+            choiseGeneration = true;
             _type = RandomTypeEnum.Встроенный;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            _choiseGeneration = false;
-            _choiseGeneratorLemer = true;
+            choiseGeneration = false;
             _type = RandomTypeEnum.Лемер;
         }
         
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            if (_choiseGeneration)
-            {
+            
                 double[] buffArr = _mathematic.ButtonStart((int)numericSequence.Value);
                 listView2.Items.Add((listView2.Items.Count + 1 + ") ") + "Mx = " + buffArr[0].ToString("#.###") + "\n" +
                                     " Dx = " + buffArr[1].ToString("#.###"));
-                // Series series1=this.chart1.Series.Add(listView1.Items.Count.ToString() + " - " + numericSequence.Value + " - " + type);
-                // Series series2 = this.chart2.Series.Add(listView1.Items.Count.ToString() + " - " + numericSequence.Value + " - " + type);
-                // series2.ChartType = SeriesChartType.Line;
-                // for (int i = 0; i < 100; i++)
-                // {
-                //     series1.Points.Add(_mathematic.ar);
-                //     series2.Points.AddXY(i + 1, mathObject.arrP[i]);
-                //     series2.Points.AddXY(i + 2, mathObject.arrP[i]);
-                // }
-            }
-            else if (_choiseGeneratorLemer)
-            {
-                
-            }
+                Series series1=chart1.Series.Add(listView1.Items.Count.ToString() + " - " + numericSequence.Value + " - " + _type);
+                Series series2 = chart2.Series.Add(listView1.Items.Count.ToString() + " - " + numericSequence.Value + " - " + _type);
+                series2.ChartType = SeriesChartType.Line;
+                for (int i = 0; i < 100; i++)
+                {
+                    series1.Points.Add(_mathematic.arrayM[i]);
+                    series2.Points.AddXY(i + 1, _mathematic.arrayP[i]);
+                    series2.Points.AddXY(i + 2, _mathematic.arrayP[i]);
+                }
+            
+           
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
             _mathematic = new Mathematic(this);
             listView2.Items.Clear();
+            chart1.Series.Clear();
+            chart2.Series.Clear();
         }
 
 
