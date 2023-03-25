@@ -24,7 +24,7 @@ namespace Generation
         public Form1()
         {
             InitializeComponent();
-            _mathematic = new Mathematic(this);
+            _mathematic = new Mathematic(this,1);
             choiseGeneration = true;
             this.chart1.Palette = ChartColorPalette.Bright;
             this.chart1.Titles.Add("f(x)");
@@ -58,8 +58,8 @@ namespace Generation
                 double[] buffArr = _mathematic.ButtonStart((int)numericSequence.Value);
                 listView2.Items.Add((listView2.Items.Count + 1 + ") ") + "Mx = " + buffArr[0].ToString("#.###") + "\n" +
                                     " Dx = " + buffArr[1].ToString("#.###"));
-                Series series1=chart1.Series.Add(listView1.Items.Count.ToString() + " - " + numericSequence.Value + " - " + _type);
-                Series series2 = chart2.Series.Add(listView1.Items.Count.ToString() + " - " + numericSequence.Value + " - " + _type);
+                Series series1=chart1.Series.Add(listView2.Items.Count.ToString() + " - " + numericSequence.Value + " - " + _type);
+                Series series2 = chart2.Series.Add(listView2.Items.Count.ToString() + " - " + numericSequence.Value + " - " + _type);
                 series2.ChartType = SeriesChartType.Line;
                 for (int i = 0; i < 100; i++)
                 {
@@ -73,13 +73,16 @@ namespace Generation
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            _mathematic = new Mathematic(this);
+            _mathematic = new Mathematic(this,1);
             listView2.Items.Clear();
             chart1.Series.Clear();
             chart2.Series.Clear();
         }
 
 
-        
+        private void buttonСalculation_Click(object sender, EventArgs e)
+        {
+            // labelResultPi.Text=
+        }
     }
 }

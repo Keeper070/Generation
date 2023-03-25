@@ -45,15 +45,15 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericPi = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonСalculation = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelResultPi = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSequence)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
@@ -154,12 +154,12 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // numericUpDown2
+            // numericPi
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(37, 721);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(191, 20);
-            this.numericUpDown2.TabIndex = 7;
+            this.numericPi.Location = new System.Drawing.Point(37, 721);
+            this.numericPi.Name = "numericPi";
+            this.numericPi.Size = new System.Drawing.Size(191, 20);
+            this.numericPi.TabIndex = 7;
             // 
             // label2
             // 
@@ -180,6 +180,7 @@
             this.buttonСalculation.TabIndex = 9;
             this.buttonСalculation.Text = "Рассчитать";
             this.buttonСalculation.UseVisualStyleBackColor = true;
+            this.buttonСalculation.Click += new System.EventHandler(this.buttonСalculation_Click);
             // 
             // chart1
             // 
@@ -216,15 +217,14 @@
             this.chart2.TabIndex = 11;
             this.chart2.Text = "chart2";
             // 
-            // label3
+            // labelResultPi
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(83, 754);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 23);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "result";
+            this.labelResultPi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelResultPi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelResultPi.Location = new System.Drawing.Point(83, 754);
+            this.labelResultPi.Name = "labelResultPi";
+            this.labelResultPi.Size = new System.Drawing.Size(118, 23);
+            this.labelResultPi.TabIndex = 12;
             // 
             // Form1
             // 
@@ -232,12 +232,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1235, 901);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelResultPi);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.buttonСalculation);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericPi);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.listView2);
@@ -250,7 +250,7 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericSequence)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
@@ -258,7 +258,7 @@
 
         private System.Windows.Forms.Button buttonСalculation;
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelResultPi;
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
@@ -267,7 +267,7 @@
 
         private System.Windows.Forms.Label label2;
 
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericPi;
 
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonClear;
