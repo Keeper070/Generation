@@ -38,9 +38,9 @@ namespace Generation
             arrayP = new double[100];
             NumericSequence = numericSequence;
             GenerateArrayM();
+            double[] buff = SearchValue();
             TransitValuesFromArrM();
             GenerateSequenceForArrP();
-            double[] buff = SearchValue();
             return buff;
         }
 
