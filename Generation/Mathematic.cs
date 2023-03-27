@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Windows.Forms;
 
 namespace Generation
@@ -38,6 +38,7 @@ namespace Generation
             arrayP = new double[100];
             NumericSequence = numericSequence;
             GenerateArrayM();
+            TransitValuesFromArrM();
             GenerateSequenceForArrP();
             double[] buff = SearchValue();
             return buff;
@@ -74,6 +75,14 @@ namespace Generation
                 arrayP[i] = arrayP[i - 1] + arrayM[i - 1];
             }
         }
+        
+        /// Перевод значений массива М в вероятность для правильного построения второго графика(Пример 5 -> 0,05)
+        private void TransitValuesFromArrM()
+        {
+            for (int i = 0; i < arrayM.Length; i++)
+                arrayM[i] /= NumericSequence;
+        }
+
 
         /// <summary>
         /// Метод для нахождения:
@@ -115,5 +124,30 @@ namespace Generation
         {
             return (int)(N  * Lemer());
         }
+        
+        private double Circle(double x, double y)
+        {
+            return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+        }
+        
+        //Метод нахождения числа Pi
+        public double CalculatePi(int numericSequence)
+        {
+            double Ncric = 0;
+            double Nmax = numericSequence;
+            for (int i = 0; i < Nmax; i++)
+            {
+                var x = Lemer();
+                var y = Lemer();
+                if (Circle(x, y) <= 1.0)
+                {
+                    Ncric++;
+                }
+            }
+
+            return (Ncric / Nmax) * 4;
+        }
+        
+        
     }
 }

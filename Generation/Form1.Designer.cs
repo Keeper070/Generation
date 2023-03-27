@@ -46,11 +46,10 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.numericPi = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelResultPi = new System.Windows.Forms.Label();
             this.buttonСalculation = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.labelResultPi = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSequence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPi)).BeginInit();
@@ -157,19 +156,22 @@
             // numericPi
             // 
             this.numericPi.Location = new System.Drawing.Point(37, 721);
+            this.numericPi.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.numericPi.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             this.numericPi.Name = "numericPi";
             this.numericPi.Size = new System.Drawing.Size(191, 20);
             this.numericPi.TabIndex = 7;
+            this.numericPi.Value = new decimal(new int[] { 100, 0, 0, 0 });
             // 
-            // label2
+            // labelResultPi
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(37, 754);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 42);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Pi=";
+            this.labelResultPi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelResultPi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelResultPi.Location = new System.Drawing.Point(37, 754);
+            this.labelResultPi.Name = "labelResultPi";
+            this.labelResultPi.Size = new System.Drawing.Size(191, 42);
+            this.labelResultPi.TabIndex = 8;
+            this.labelResultPi.Text = "Pi=";
             // 
             // buttonСalculation
             // 
@@ -217,26 +219,16 @@
             this.chart2.TabIndex = 11;
             this.chart2.Text = "chart2";
             // 
-            // labelResultPi
-            // 
-            this.labelResultPi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelResultPi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelResultPi.Location = new System.Drawing.Point(83, 754);
-            this.labelResultPi.Name = "labelResultPi";
-            this.labelResultPi.Size = new System.Drawing.Size(118, 23);
-            this.labelResultPi.TabIndex = 12;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1235, 901);
-            this.Controls.Add(this.labelResultPi);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.buttonСalculation);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelResultPi);
             this.Controls.Add(this.numericPi);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonStart);
@@ -258,14 +250,12 @@
 
         private System.Windows.Forms.Button buttonСalculation;
 
-        private System.Windows.Forms.Label labelResultPi;
-
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
 
         private System.Windows.Forms.Button button3;
 
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelResultPi;
 
         private System.Windows.Forms.NumericUpDown numericPi;
 

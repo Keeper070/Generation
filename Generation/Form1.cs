@@ -77,12 +77,13 @@ namespace Generation
             listView2.Items.Clear();
             chart1.Series.Clear();
             chart2.Series.Clear();
+            labelResultPi.Text = "";
         }
 
 
         private void buttonСalculation_Click(object sender, EventArgs e)
         {
-            // labelResultPi.Text=
+            labelResultPi.Text ="Pi =" + _mathematic.CalculatePi((int)numericPi.Value);
         }
     }
 }
